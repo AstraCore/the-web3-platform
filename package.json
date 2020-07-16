@@ -1,0 +1,88 @@
+{
+  "name": "the-web3-platform",
+  "version": "1.0.0",
+  "description": "React hooks for the web3 universe",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "rimraf dist && NODE_ENV=production tsc --noEmit false --allowJs false --isolatedModules false --declaration true --outDir dist",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'src/**/*'",
+    "lint": "tslint '**/*.ts' '**/*.tsx'",
+    "check-types": "tsc",
+    "watch-types": "tsc --watch",
+    "prepare": "npm run build",
+    "deploy": "npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/216k155/the-web3-platform.git"
+  },
+  "keywords": [
+    "ethereum",
+    "react",
+    "reactjs",
+    "react-hooks",
+    "web3"
+  ],
+  "author": "216k155",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/216k155/the-web3-platform/issues"
+  },
+  "homepage": "https://github.com/216k155/the-web3-platform#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@types/react": "^16.4.18",
+    "@types/web3": "^1.0.11",
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "husky": "^1.1.2",
+    "lint-staged": "^8.0.3",
+    "mocha": "^5.2.0",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.4",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bignumber.js": "^7.2.1",
+    "bn.js": "^4.11.8",
+    "bs58": "^4.0.1",
+    "chai": "^4.1.2",
+    "ethjs-abi": "^0.2.1",
+    "lodash": "^4.17.10",
+    "utf8": "^3.0.0",
+    "web3-utils": "^1.0.0-beta.36"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn format",
+      "yarn lint",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "semi": true
+  }
+}

@@ -1,0 +1,32 @@
+language: node_js
+
+node_js:
+  - "10"
+
+env:
+  - CXX=g++-4.8 ASTRA_RPC_ADDRESS='http://astra:astra@localhost:30000' SENDER_ADDRESS='ASTRAK8FNPRm54jvTLAGEs1biTCgyCkcsmna' WALLET_PASSPHRASE='astra'
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+
+cache:
+  directories:
+    - "node_modules"
+
+before_install:
+  - wget https://github.com/ASTRA-Core/astra/releases/download/v5.2.5/astra-qt-linux-18.zip
+
+install:
+  - tar -xvzf astra-qt-linux-18.zip
+  - npm install
+  - mkdir test/data/.astra
+
+script:
+  - .astra/astrad -testnet -logevents -rpcuser=rpcuser -rpcpassword=rpcpassword -datadir=./test/data/.astra
+  - npm run test:cleanenv
+
