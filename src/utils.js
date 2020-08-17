@@ -160,7 +160,7 @@ class Utils {
       return false;
     }
 
-    if (!address.startsWith('q') && !address.startsWith('Q')) {
+    if (!address.startsWith('q') && !address.startsWith('A')) {
       return false;
     }
 
